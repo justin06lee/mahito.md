@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Anthropic Cybersecurity Skills" width="100%">
+  <img src="assets/mahito.svg" alt="Anthropic Cybersecurity Skills" width="330">
 </p>
 
 <div align="center">
@@ -108,6 +108,31 @@ cd Anthropic-Cybersecurity-Skills
 ```
 
 Works immediately with Claude Code, GitHub Copilot, OpenAI Codex CLI, Cursor, Gemini CLI, and any [agentskills.io](https://agentskills.io)-compatible platform. 
+
+## ⚡ One command: `/mahito`
+
+`mahito` is the **orchestrator skill** that ties the whole library together. In a Claude Code session, run:
+
+```
+/mahito
+```
+
+and it will, autonomously and end-to-end:
+
+1. **Profile** the current project (languages, frameworks, infra, auth, secrets, IaC, containers, cloud, smart contracts, LLM/AI features, …).
+2. **Select** every *applicable* skill from the library by matching each skill's triggers against the profile — favoring defensive/hardening lenses.
+3. **Fan out** a fleet of `mahito-auditor` subagents, one per selected skill, that each invoke their skill, find issues, and apply safe defensive fixes.
+4. **Consolidate** everything into a `MAHITO-AUDIT.md` report and verify the project still builds/tests.
+
+The orchestrator itself never reads any skill's body — each technique is loaded only inside the subagent that invokes it. It operates on **your own project only**, defensively (find and fix), and records anything it skips.
+
+Install it standalone with [`bmo`](https://github.com/justin06lee/bmo):
+
+```bash
+bmo add justin06lee/skills/mahito     # installs the skill + its mahito-auditor subagent
+```
+
+Then `/mahito` is available in any Claude Code chat.
 
 ## 🌍 GARS-2026 — Global Agentic AI Readiness Survey
 

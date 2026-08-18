@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Anthropic Cybersecurity Skills" width="100%">
+  <img src="assets/mahito.svg" alt="Anthropic Cybersecurity Skills" width="330">
 </p>
 
 <div align="center">
